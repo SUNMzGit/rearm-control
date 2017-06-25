@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MainForm.ui.qml</file>
+        <file>Login.qml</file>
+        <file>PatInfo.qml</file>
+        <file>AddPatDialog.qml</file>
+        <file>PatListView.qml</file>
+        <file>SystemToolsBar.qml</file>
+        <file>images/assess.png</file>
+        <file>images/report.png</file>
+        <file>images/train.png</file>
+        <file>ChoicePage.qml</file>
+        <file>AssessPage.qml</file>
+        <file>images/FM13.png</file>
+        <file>SystemSeting.qml</file>
+        <file>DocListView.qml</file>
+        <file>images/robot.jpg</file>
+        <file>RehabPage.qml</file>
+    </qresource>
+</RCC>

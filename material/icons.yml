@@ -1,0 +1,25 @@
+out: icons/core_icons.qrc
+icons:
+  - navigation/arrow_back
+  - navigation/chevron_left
+  - navigation/chevron_right
+  - navigation/close
+  - navigation/menu
+  - navigation/more_vert
+  - action/account_circle
+  - action/autorenew
+  - action/delete
+  - action/language
+  - action/settings
+  - alert/warning
+  - communication/email
+  - content/add
+  - content/create
+  - content/forward
+  - device/access_alarm
+  - file/file_download
+  - image/color_lens
+  - image/edit
+  - maps/place
+  - navigation/arrow_drop_down
+  - social/share

@@ -1,0 +1,322 @@
+<RCC>
+<qresource prefix="/icons/maps">
+	<file alias="place.svg">maps_place.svg</file>
+</qresource>
+
+<qresource prefix="/icons/communication">
+	<file alias="email.svg">communication_email.svg</file>
+</qresource>
+
+<qresource prefix="/icons/image">
+	<file alias="color_lens.svg">image_color_lens.svg</file>
+	<file alias="edit.svg">image_edit.svg</file>
+</qresource>
+
+<qresource prefix="/icons/alert">
+	<file alias="warning.svg">alert_warning.svg</file>
+</qresource>
+
+<qresource prefix="/icons/content">
+	<file alias="add.svg">content_add.svg</file>
+	<file alias="create.svg">content_create.svg</file>
+	<file alias="forward.svg">content_forward.svg</file>
+</qresource>
+
+<qresource prefix="/icons/device">
+	<file alias="access_alarm.svg">device_access_alarm.svg</file>
+</qresource>
+
+<qresource prefix="/icons/file">
+	<file alias="file_download.svg">file_file_download.svg</file>
+</qresource>
+
+<qresource prefix="/icons/social">
+	<file alias="share.svg">social_share.svg</file>
+</qresource>
+
+<qresource prefix="/icons/action">
+	<file alias="account_circle.svg">action_account_circle.svg</file>
+	<file alias="autorenew.svg">action_autorenew.svg</file>
+	<file alias="delete.svg">action_delete.svg</file>
+	<file alias="language.svg">action_language.svg</file>
+	<file alias="settings.svg">action_settings.svg</file>
+</qresource>
+
+<qresource prefix="/icons/navigation">
+	<file alias="arrow_drop_down.svg">navigation_arrow_drop_down.svg</file>
+</qresource>    
+     <qresource prefix="/icons/maps">
+        <file>maps/add_location.svg</file>
+        <file>maps/beenhere.svg</file>
+        <file>maps/directions.svg</file>
+        <file>maps/directions_bike.svg</file>
+        <file>maps/directions_boat.svg</file>
+        <file>maps/directions_bus.svg</file>
+        <file>maps/directions_car.svg</file>
+        <file>maps/directions_railway.svg</file>
+        <file>maps/directions_run.svg</file>
+        <file>maps/directions_subway.svg</file>
+        <file>maps/directions_transit.svg</file>
+        <file>maps/directions_walk.svg</file>
+        <file>maps/edit_location.svg</file>
+        <file>maps/flight.svg</file>
+        <file>maps/hotel.svg</file>
+        <file>maps/layers.svg</file>
+        <file>maps/layers_clear.svg</file>
+        <file>maps/local_activity.svg</file>
+        <file>maps/local_airport.svg</file>
+        <file>maps/local_atm.svg</file>
+        <file>maps/local_bar.svg</file>
+        <file>maps/local_cafe.svg</file>
+        <file>maps/local_car_wash.svg</file>
+        <file>maps/local_convenience_store.svg</file>
+        <file>maps/local_dining.svg</file>
+        <file>maps/local_drink.svg</file>
+        <file>maps/local_florist.svg</file>
+        <file>maps/local_gas_station.svg</file>
+        <file>maps/local_grocery_store.svg</file>
+        <file>maps/local_hospital.svg</file>
+        <file>maps/local_hotel.svg</file>
+        <file>maps/local_laundry_service.svg</file>
+        <file>maps/local_library.svg</file>
+        <file>maps/local_mall.svg</file>
+        <file>maps/local_movies.svg</file>
+        <file>maps/local_offer.svg</file>
+        <file>maps/local_parking.svg</file>
+        <file>maps/local_pharmacy.svg</file>
+        <file>maps/local_phone.svg</file>
+        <file>maps/local_pizza.svg</file>
+        <file>maps/local_play.svg</file>
+        <file>maps/local_post_office.svg</file>
+        <file>maps/local_printshop.svg</file>
+        <file>maps/local_see.svg</file>
+        <file>maps/local_shipping.svg</file>
+        <file>maps/local_taxi.svg</file>
+        <file>maps/map.svg</file>
+        <file>maps/my_location.svg</file>
+        <file>maps/navigation.svg</file>
+        <file>maps/near_me.svg</file>
+        <file>maps/person_pin.svg</file>
+        <file>maps/person_pin_circle.svg</file>
+        <file>maps/pin_drop.svg</file>
+        <file>maps/place.svg</file>
+        <file>maps/rate_review.svg</file>
+        <file>maps/restaurant_menu.svg</file>
+        <file>maps/satellite.svg</file>
+        <file>maps/store_mall_directory.svg</file>
+        <file>maps/terrain.svg</file>
+        <file>maps/traffic.svg</file>
+        <file>maps/zoom_out_map.svg</file>
+    </qresource>
+    <qresource prefix="/icons/action">
+        <file>action/3d_rotation.svg</file>
+        <file>action/accessibility.svg</file>
+        <file>action/accessible.svg</file>
+        <file>action/account_balance.svg</file>
+        <file>action/account_balance_wallet.svg</file>
+        <file>action/account_box.svg</file>
+        <file>action/account_circle.svg</file>
+        <file>action/add_shopping_cart.svg</file>
+        <file>action/alarm.svg</file>
+        <file>action/alarm_add.svg</file>
+        <file>action/alarm_off.svg</file>
+        <file>action/alarm_on.svg</file>
+        <file>action/all_out.svg</file>
+        <file>action/android.svg</file>
+        <file>action/announcement.svg</file>
+        <file>action/aspect_ratio.svg</file>
+        <file>action/assessment.svg</file>
+        <file>action/assignment.svg</file>
+        <file>action/assignment_ind.svg</file>
+        <file>action/assignment_late.svg</file>
+        <file>action/assignment_return.svg</file>
+        <file>action/assignment_returned.svg</file>
+        <file>action/assignment_turned_in.svg</file>
+        <file>action/autorenew.svg</file>
+        <file>action/backup.svg</file>
+        <file>action/book.svg</file>
+        <file>action/bookmark.svg</file>
+        <file>action/bookmark_border.svg</file>
+        <file>action/bug_report.svg</file>
+        <file>action/build.svg</file>
+        <file>action/cached.svg</file>
+        <file>action/camera_enhance.svg</file>
+        <file>action/card_giftcard.svg</file>
+        <file>action/card_membership.svg</file>
+        <file>action/card_travel.svg</file>
+        <file>action/change_history.svg</file>
+        <file>action/check_circle.svg</file>
+        <file>action/chrome_reader_mode.svg</file>
+        <file>action/class.svg</file>
+        <file>action/code.svg</file>
+        <file>action/compare_arrows.svg</file>
+        <file>action/copyright.svg</file>
+        <file>action/credit_card.svg</file>
+        <file>action/dashboard.svg</file>
+        <file>action/date_range.svg</file>
+        <file>action/delete.svg</file>
+        <file>action/description.svg</file>
+        <file>action/dns.svg</file>
+        <file>action/done.svg</file>
+        <file>action/done_all.svg</file>
+        <file>action/donut_large.svg</file>
+        <file>action/donut_small.svg</file>
+        <file>action/eject.svg</file>
+        <file>action/event.svg</file>
+        <file>action/event_seat.svg</file>
+        <file>action/exit_to_app.svg</file>
+        <file>action/explore.svg</file>
+        <file>action/extension.svg</file>
+        <file>action/face.svg</file>
+        <file>action/favorite.svg</file>
+        <file>action/favorite_border.svg</file>
+        <file>action/feedback.svg</file>
+        <file>action/find_in_page.svg</file>
+        <file>action/find_replace.svg</file>
+        <file>action/fingerprint.svg</file>
+        <file>action/flight_land.svg</file>
+        <file>action/flight_takeoff.svg</file>
+        <file>action/flip_to_back.svg</file>
+        <file>action/flip_to_front.svg</file>
+        <file>action/gavel.svg</file>
+        <file>action/get_app.svg</file>
+        <file>action/gif.svg</file>
+        <file>action/grade.svg</file>
+        <file>action/group_work.svg</file>
+        <file>action/help.svg</file>
+        <file>action/help_outline.svg</file>
+        <file>action/highlight_off.svg</file>
+        <file>action/history.svg</file>
+        <file>action/home.svg</file>
+        <file>action/hourglass_empty.svg</file>
+        <file>action/hourglass_full.svg</file>
+        <file>action/http.svg</file>
+        <file>action/https.svg</file>
+        <file>action/important_devices.svg</file>
+        <file>action/info.svg</file>
+        <file>action/info_outline.svg</file>
+        <file>action/input.svg</file>
+        <file>action/invert_colors.svg</file>
+        <file>action/label.svg</file>
+        <file>action/label_outline.svg</file>
+        <file>action/language.svg</file>
+        <file>action/launch.svg</file>
+        <file>action/lightbulb_outline.svg</file>
+        <file>action/line_style.svg</file>
+        <file>action/line_weight.svg</file>
+        <file>action/list.svg</file>
+        <file>action/lock.svg</file>
+        <file>action/lock_open.svg</file>
+        <file>action/lock_outline.svg</file>
+        <file>action/loyalty.svg</file>
+        <file>action/markunread_mailbox.svg</file>
+        <file>action/motorcycle.svg</file>
+        <file>action/note_add.svg</file>
+        <file>action/offline_pin.svg</file>
+        <file>action/opacity.svg</file>
+        <file>action/open_in_browser.svg</file>
+        <file>action/open_in_new.svg</file>
+        <file>action/open_with.svg</file>
+        <file>action/pageview.svg</file>
+        <file>action/pan_tool.svg</file>
+        <file>action/payment.svg</file>
+        <file>action/perm_camera_mic.svg</file>
+        <file>action/perm_contact_calendar.svg</file>
+        <file>action/perm_data_setting.svg</file>
+        <file>action/perm_device_information.svg</file>
+        <file>action/perm_identity.svg</file>
+        <file>action/perm_media.svg</file>
+        <file>action/perm_phone_msg.svg</file>
+        <file>action/perm_scan_wifi.svg</file>
+        <file>action/pets.svg</file>
+        <file>action/picture_in_picture.svg</file>
+        <file>action/picture_in_picture_alt.svg</file>
+        <file>action/play_for_work.svg</file>
+        <file>action/polymer.svg</file>
+        <file>action/power_settings_new.svg</file>
+        <file>action/pregnant_woman.svg</file>
+        <file>action/print.svg</file>
+        <file>action/query_builder.svg</file>
+        <file>action/question_answer.svg</file>
+        <file>action/receipt.svg</file>
+        <file>action/record_voice_over.svg</file>
+        <file>action/redeem.svg</file>
+        <file>action/reorder.svg</file>
+        <file>action/report_problem.svg</file>
+        <file>action/restore.svg</file>
+        <file>action/room.svg</file>
+        <file>action/rounded_corner.svg</file>
+        <file>action/rowing.svg</file>
+        <file>action/schedule.svg</file>
+        <file>action/search.svg</file>
+        <file>action/settings.svg</file>
+        <file>action/settings_applications.svg</file>
+        <file>action/settings_backup_restore.svg</file>
+        <file>action/settings_bluetooth.svg</file>
+        <file>action/settings_brightness.svg</file>
+        <file>action/settings_cell.svg</file>
+        <file>action/settings_ethernet.svg</file>
+        <file>action/settings_input_antenna.svg</file>
+        <file>action/settings_input_component.svg</file>
+        <file>action/settings_input_composite.svg</file>
+        <file>action/settings_input_hdmi.svg</file>
+        <file>action/settings_input_svideo.svg</file>
+        <file>action/settings_overscan.svg</file>
+        <file>action/settings_phone.svg</file>
+        <file>action/settings_power.svg</file>
+        <file>action/settings_remote.svg</file>
+        <file>action/settings_voice.svg</file>
+        <file>action/shop.svg</file>
+        <file>action/shopping_basket.svg</file>
+        <file>action/shopping_cart.svg</file>
+        <file>action/shop_two.svg</file>
+        <file>action/speaker_notes.svg</file>
+        <file>action/spellcheck.svg</file>
+        <file>action/stars.svg</file>
+        <file>action/store.svg</file>
+        <file>action/subject.svg</file>
+        <file>action/supervisor_account.svg</file>
+        <file>action/swap_horiz.svg</file>
+        <file>action/swap_vert.svg</file>
+        <file>action/swap_vertical_circle.svg</file>
+        <file>action/system_update_alt.svg</file>
+        <file>action/tab.svg</file>
+        <file>action/tab_unselected.svg</file>
+        <file>action/theaters.svg</file>
+        <file>action/thumb_down.svg</file>
+        <file>action/thumbs_up_down.svg</file>
+        <file>action/thumb_up.svg</file>
+        <file>action/timeline.svg</file>
+        <file>action/toc.svg</file>
+        <file>action/today.svg</file>
+        <file>action/toll.svg</file>
+        <file>action/touch_app.svg</file>
+        <file>action/track_changes.svg</file>
+        <file>action/translate.svg</file>
+        <file>action/trending_down.svg</file>
+        <file>action/trending_flat.svg</file>
+        <file>action/trending_up.svg</file>
+        <file>action/turned_in.svg</file>
+        <file>action/turned_in_not.svg</file>
+        <file>action/update.svg</file>
+        <file>action/verified_user.svg</file>
+        <file>action/view_agenda.svg</file>
+        <file>action/view_array.svg</file>
+        <file>action/view_carousel.svg</file>
+        <file>action/view_column.svg</file>
+        <file>action/view_day.svg</file>
+        <file>action/view_headline.svg</file>
+        <file>action/view_list.svg</file>
+        <file>action/view_module.svg</file>
+        <file>action/view_quilt.svg</file>
+        <file>action/view_stream.svg</file>
+        <file>action/view_week.svg</file>
+        <file>action/visibility.svg</file>
+        <file>action/visibility_off.svg</file>
+        <file>action/watch_later.svg</file>
+        <file>action/work.svg</file>
+        <file>action/youtube_searched_for.svg</file>
+        <file>action/zoom_in.svg</file>
+        <file>action/zoom_out.svg</file>
+    </qresource>
+</RCC>
