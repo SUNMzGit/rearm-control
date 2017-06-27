@@ -35,7 +35,7 @@ Item {
                 }
                 action: Action {
                     id: back
-                    onTriggered: pageSwitched("Choice");
+                    onTriggered: pageSwitched("ChoicePage");
                 }
             }
             Label {

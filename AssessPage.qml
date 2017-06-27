@@ -8,7 +8,7 @@ import Material 0.3
 import Material.ListItems 0.1 as ListItem
 
 Item {
-
+    signal pageSwitched( var name );
     property var colorRect: ["#339900", "#006699", "#FF6600", "#FFFF33", "#FF0000", "#006699"]
     property var levelModel: ["0 级", "1 级", "2 级 ","3 级","4 级","5 级"]
     property var standardText: ["无可测知的肌肉收缩 ", "有轻微收缩，但不能引起关节运动", "在减重状态下能作关节全范围运动 ","能杭重力作关节全范围运动，但不能抗阻力","能抗重力、抗一定阻力运动","能抗重力、抗充分阻力运动"]
@@ -33,7 +33,7 @@ Item {
                 }
                 action: Action {
                     id: back
-                    onTriggered: pageSwitched("Choice");
+                    onTriggered: pageSwitched("ChoicePage");
                 }
             }
             Label {
@@ -258,6 +258,7 @@ Item {
                 backgroundColor: Theme.accentColor
                 onClicked: {
                    console.info("结束评定");
+                   pageSwitched("AssRomResult");
                     //if(tabView.currentIndex == 1)
                     //else if(tabView.currentIndex == 2)
                }

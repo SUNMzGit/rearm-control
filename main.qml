@@ -10,9 +10,9 @@ ApplicationWindow {
     width: 1920
     height: 1080
     title: qsTr("ArmTrianer")
-    flags: Qt.FramelessWindowHint
+    //flags: Qt.FramelessWindowHint
 
-    property string selectedComponent: "RehabPage"//"Login"//"PatInfo"//
+    property string selectedComponent: "Login"//"PatInfo"//
 
     initialPage: Page {
         id: page

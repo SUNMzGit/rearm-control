@@ -17,5 +17,9 @@
         <file>DocListView.qml</file>
         <file>images/robot.jpg</file>
         <file>RehabPage.qml</file>
+        <file>images/hand.png</file>
+        <file>images/passbk.png</file>
+        <file>PassTrain.qml</file>
+        <file>AssRomResult.qml</file>
     </qresource>
 </RCC>
