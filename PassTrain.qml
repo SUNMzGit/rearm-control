@@ -13,49 +13,23 @@ Item {
         anchors.topMargin: dp(80)
         anchors.left: parent.left
         anchors.leftMargin: dp(110)
-        Row {
-            anchors.top: parent.top
-            anchors.left: parent.left
-            anchors.topMargin: dp(60)
-            anchors.leftMargin: dp(110)
-            spacing: dp(20)
-            Icon {
-                id: icontime
-                name: "awesome/hourglass_half"
-                color: "#2196f3"
-                size: dp(32)
-            }
-            Label {
-                text: "05:00"
-                style: "headline"
-            }
-            Label {
-                width: dp(150)
-                height: dp(32)
-            }
-            Label {
-                text: "被动训练"
-                style: "headline"
-            }
-        }
+
         View {
             width: parent.width * 0.8
             height: dp(780)
             anchors.top: parent.top
             anchors.left: parent.left
-            anchors.topMargin: dp(160)
+            anchors.topMargin: dp(80)
             anchors.leftMargin: dp(96)
             Image {
                 id: name
                 source: "images/passbk.png"
             }
-            Image {
-                id: hand
-                width: dp(64)
-                height: dp(64)
-                source: "images/hand.png"
-                x: 210
-                y: 350
+            Label {  //训练倒计时
+                anchors.centerIn: parent
+                text: "5:00"
+                font.pixelSize: dp(72)
+                color: "white"
             }
         }
     }

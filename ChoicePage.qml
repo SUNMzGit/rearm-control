@@ -8,7 +8,6 @@ import Material.Extras 0.1
 
 Item {
     width: dp(1920)
-
     property var trainModel: ["被动训练", "主动训练", "助力训练"]
     property var colorRect: ["#339900", "#006699", "#FF6600"]
     property var targetModel : ["ROM训练", "认知训练", "ADL训练"]
@@ -102,7 +101,6 @@ Item {
                        anchors.fill: parent
                        onClicked: { pageSwitched("RehabPage"); }
                    }
-
                 }
 
                 Rectangle {
@@ -126,15 +124,10 @@ Item {
                    }
                    MouseArea {
                        anchors.fill: parent
-                       onClicked: { parent.color = 'red' }
+                       onClicked: { pageSwitched("ReportPage");  }
                    }
                 }
             }
         }
-
-
     }
-
-
-
 }
