@@ -4,11 +4,9 @@ import QtQuick.Layouts 1.2
 import QtQuick.Controls 1.5
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.2
-import QtQuick.Dialogs 1.2
 import Material 0.2
-import Material.ListItems 0.1 as ListItem
-
 Item {
+    property alias model: docinfoListView.model
     Rectangle {
         width: dp(700)
         height: dp(330)
@@ -19,7 +17,7 @@ Item {
             spacing: dp(1)
             header: headerComponent
             delegate: infoComponent
-            model: 6//patsModel
+            model: doctorModel
             Component {
                 id: headerComponent
                 Rectangle {
@@ -101,7 +99,7 @@ Item {
                             horizontalAlignment: Text.AlignLeft
                             verticalAlignment: Text.AlignVCenter
                             style: "dialog"
-                            text: "张登科"//patsModel[index].name
+                            text: doctorModel.get(index).name
                         }
 
                         Label {
@@ -110,7 +108,7 @@ Item {
                             horizontalAlignment: Text.AlignLeft
                             verticalAlignment: Text.AlignVCenter
                             style: "dialog"
-                            text: "男"//patsModel[index].gender
+                            text: doctorModel.get(index).gender
                         }
 
                         Label {
@@ -119,7 +117,7 @@ Item {
                             horizontalAlignment: Text.AlignLeft
                             verticalAlignment: Text.AlignVCenter
                             style: "dialog"
-                            text: "37"//patsModel[index].age
+                            text: doctorModel.get(index).age
                         }
                         Label {
                             Layout.alignment: Qt.AlignLeft
@@ -127,7 +125,7 @@ Item {
                             horizontalAlignment: Text.AlignLeft
                             verticalAlignment: Text.AlignVCenter
                             style: "dialog"
-                            text: "副主任"//patsModel[index].age
+                            text: doctorModel.get(index).rank
                         }
                         Label {
                             Layout.alignment: Qt.AlignLeft
@@ -135,11 +133,8 @@ Item {
                             horizontalAlignment: Text.AlignLeft
                             verticalAlignment: Text.AlignVCenter
                             style: "dialog"
-                            text: "神经康复"//patsModel[index].age
+                            text: doctorModel.get(index).good
                         }
-
-
-
                     }
                     MouseArea {
                         anchors.fill: parent

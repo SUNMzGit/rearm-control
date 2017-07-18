@@ -5,7 +5,7 @@ import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.2
 import QtQuick.Dialogs 1.2
 import Material 0.2
-import Material.ListItems 0.1 as ListItem
+import com.mysqlhandler 1.0
 
 
 /* 系统高级设置窗口 */
@@ -53,6 +53,8 @@ Item {
             tabView.addTab("机械限位", tabContent_limit);
             tabView.addTab("串口配置", tabContent_port);
             tabView.addTab("软件信息", tabContent_soft);
+
+            updateDocModel();
         }
 
 
@@ -155,8 +157,10 @@ Item {
                 }
             }
             DocListView {
+                id: docListView
                 x:dp(260)
                 y: dp(220)
+                model: doctorModel
 
             }
             Button {
@@ -369,7 +373,7 @@ Item {
                     font.pixelSize: dp(20)
                 }
                 Label {
-                    text: "Copyright©2017- SUNMz"
+                    text: "Copyright©2017 上海理工大学康复工程与技术研究所"
                     font.pixelSize: dp(20)
                 }
                 Label {
@@ -383,5 +387,24 @@ Item {
             }
         }
     }//tabContent_soft
+
+    ListModel {
+        id: doctorModel
+    }
+
+    function updateDocModel(){
+        console.info("更新医生列表");
+        doctorModel.clear();
+        for(var i=0; i<mysqlHandler.getDoctorModel.length; i++) {
+            doctorModel.append ({
+                 name:mysqlHandler.getDoctorModel[i].name,
+                 gender:mysqlHandler.getDoctorModel[i].gender,
+                 age:mysqlHandler.getDoctorModel[i].age,
+                 rank:mysqlHandler.getDoctorModel[i].rank,
+                 good:mysqlHandler.getDoctorModel[i].good
+            })
+        }
+
+    }
 
 }

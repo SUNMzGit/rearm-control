@@ -1,10 +1,15 @@
 TEMPLATE = app
 
 QT += qml quick widgets
-
+QT += core gui sql
+QT += quickcontrols2
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    middledata.cpp \
+    patient.cpp \
+    mysqlhandler.cpp \
+    doctor.cpp
 
 RESOURCES += qml.qrc
 
@@ -33,3 +38,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    middledata.h \
+    patient.h \
+    mysqlhandler.h \
+    doctor.h

@@ -3,14 +3,13 @@ import QtQuick.Controls 1.5
 import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.2
 import Material 0.3
-import Material.ListItems 0.1 as ListItem
-import Material.Extras 0.1
+import com.mysqlhandler 1.0
 
 
 Item {
-    property var patientsModel: []    //currentPatients
+    property var docModel: []  //currentPatients
 
-    property var currentUser: "李四"
+    property var currentUser: ""
 
     signal pageSwitched( var name );
 
@@ -114,6 +113,7 @@ Item {
                     PatListView {
                         id: patlistview
                         anchors.fill: parent
+                        model: patientsModel
                     }
                 }
                 Button {
@@ -138,19 +138,67 @@ Item {
         hasActions: true
         positiveButtonText: "是"
         negativeButtonText: "否"
+        onAccepted: {
+             mysqlHandler.deletePat(currentUser);
+             updateModel();
+        }
     }
     AddPatDialog {
         id: addpat
-
-    }
-
-    ListModel {
-        id: libraryModel
-        ListElement {
-//            name: "Apple"
-//            cost: 2.45
-
+        onAccepted: { //docid未得到
+            var docid = mysqlHandler.getDidFromName(addpat.doctorName)
+            console.info(docid)
+//            var strSql = insertUrl(name,age,gender,tip,uplen,forelen,arch,pheight,weight,docid);
+//            mysqlHandler.insertPat(strSql);
+//            updateModel();
         }
     }
+    ListModel {
+        id: patientsModel
+    }
 
+
+    Component.onCompleted: {
+        mysqlHandler.connect();
+        updateModel();
+        updateDocModel();
+    }
+
+
+    //组织插入语句//insert into table(col2, col3) values('1', '2')
+    function insertUrl(name, age, gender, tip, uplen, forelen, arch, height, weight,docid) {
+        var querypart = "insert into patient(name,age,gender,illness,upperArmLength,foreArmLength,affectedSide,height,weight,d_id) ";
+        querypart += "values( ";
+        querypart += String(name+","+age+","+gender+","+tip+","+uplen+","+forelen+","+arch+","+height+","+weight+","+docid);
+        querypart += ")"
+        return request;
+    }
+
+    function updateModel(){
+        patientsModel.clear();
+        mysqlHandler.updatePat();
+        patientsModel.clear();
+        for(var i=0; i<mysqlHandler.getPatientModel.length; i++) {
+            patientsModel.append ({
+                 name:mysqlHandler.getPatientModel[i].name,
+                 gender:mysqlHandler.getPatientModel[i].gender,
+                 age:mysqlHandler.getPatientModel[i].age,
+                 arch:mysqlHandler.getPatientModel[i].affect,
+                 uparmlength:mysqlHandler.getPatientModel[i].uplen,
+                 forearmlength:mysqlHandler.getPatientModel[i].forelen,
+                 pheight:mysqlHandler.getPatientModel[i].height,
+                 weight:mysqlHandler.getPatientModel[i].weight,
+                 doctor:mysqlHandler.getPatientModel[i].doctor,
+                 tip:mysqlHandler.getPatientModel[i].tip
+            })
+        }
+    }
+    function updateDocModel(){
+
+        //mysqlHandler.connect()
+        mysqlHandler.updateDoc();
+        for(var i=0; i<mysqlHandler.getDoctorModel.length; i++) {
+            docModel[i]  = mysqlHandler.getDoctorModel[i].name;
+        }
+    }
 }

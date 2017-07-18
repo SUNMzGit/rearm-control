@@ -12,7 +12,7 @@ ApplicationWindow {
     title: qsTr("ArmTrianer")
     //flags: Qt.FramelessWindowHint
 
-    property string selectedComponent: "Login"//"PatInfo"//
+    property string selectedComponent: "PatInfo"//"Login"//
 
     initialPage: Page {
         id: page
