@@ -3,16 +3,15 @@ import QtQuick.Controls 1.5
 import QtQuick.Dialogs 1.2
 
 import Material 0.2
-import Material.ListItems 0.1 as ListItem
 
 ApplicationWindow {
     visible: true
     width: 1920
     height: 1080
     title: qsTr("ArmTrianer")
-    //flags: Qt.FramelessWindowHint
+    flags: Qt.FramelessWindowHint
 
-    property string selectedComponent: "AssessPage"//"PatInfo"//"Login"//
+    property string selectedComponent: "RehabPage"//"AssessPage"//"PatInfo"//"Login"//
 
     initialPage: Page {
         id: page
@@ -47,7 +46,6 @@ ApplicationWindow {
                 }
 
             }
-
             // self define!!
             Connections {
                 target: example.item;

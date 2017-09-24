@@ -38,12 +38,10 @@ uchar Mysqlhandler::connect(){
     {
        qDebug()<<"success connection"<<endl;
        return 1;
-
     }
 }
 
-
- //删除patient表中选中记录
+//删除patient表中选中记录
 void Mysqlhandler::deletePat( QString pname){
     QString strSql =  QString("delete from patient where name ='%1'").arg(pname);
     QSqlQuery query;

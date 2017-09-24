@@ -84,6 +84,7 @@ Item {
                spacing: dp(32)
                TextField {
                    id: username
+                   text: "USST"
                    placeholderText: "在此输入用户名"
                    helperText: "Hint: user name."
                    anchors.horizontalCenter: parent.horizontalCenter
@@ -92,6 +93,7 @@ Item {
 
                TextField {
                    id: password
+                   text: "123456"
                    placeholderText: "在此输入密码"
                    echoMode: TextInput.Password
                    helperText: "Hint: password."
@@ -109,7 +111,6 @@ Item {
                 anchors.topMargin: dp(56)
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
-
                     pageSwitched("PatInfo");
                     //console.log("pageswitch")
 
