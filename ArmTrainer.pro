@@ -9,7 +9,8 @@ SOURCES += main.cpp \
     middledata.cpp \
     patient.cpp \
     mysqlhandler.cpp \
-    doctor.cpp
+    doctor.cpp \
+    AssessRecord.cpp
 
 RESOURCES += qml.qrc
 
@@ -43,4 +44,5 @@ HEADERS += \
     middledata.h \
     patient.h \
     mysqlhandler.h \
-    doctor.h
+    doctor.h \
+    AssessRecord.h
