@@ -249,8 +249,6 @@ Item {
 
                 }
             }
-
-
         }
     }//tabContent_rom
 

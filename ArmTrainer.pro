@@ -3,6 +3,8 @@ TEMPLATE = app
 QT += qml quick widgets
 QT += core gui sql
 QT += quickcontrols2
+QT += serialport
+
 CONFIG += c++11
 
 SOURCES += main.cpp \
@@ -10,7 +12,8 @@ SOURCES += main.cpp \
     patient.cpp \
     mysqlhandler.cpp \
     doctor.cpp \
-    AssessRecord.cpp
+    AssessRecord.cpp \
+    serialhandler.cpp
 
 RESOURCES += qml.qrc
 
@@ -45,4 +48,5 @@ HEADERS += \
     patient.h \
     mysqlhandler.h \
     doctor.h \
-    AssessRecord.h
+    AssessRecord.h \
+    serialhandler.h

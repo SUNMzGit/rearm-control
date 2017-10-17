@@ -75,7 +75,7 @@ Item {
                    }
                    MouseArea {
                        anchors.fill: parent
-                       onClicked: { pageSwitched("AssessPage");}
+                       onClicked: { serialHandler.openPort();pageSwitched("AssessPage");}
                    }
                 }
 
