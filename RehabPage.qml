@@ -430,7 +430,7 @@ Item {
                     anchors.bottom: parent.bottom
                     anchors.bottomMargin: dp(10)
                     backgroundColor: primaryColor
-                    onClicked: { pageSwitched("PassTrain"); }
+                    onClicked: {serialHandler.openPort(); serialHandler.sendto(2);}//pageSwitched("PassTrain");
                 }
             }
         }

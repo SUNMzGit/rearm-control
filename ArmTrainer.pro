@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     mysqlhandler.cpp \
     doctor.cpp \
     AssessRecord.cpp \
-    serialhandler.cpp
+    serialhandler.cpp \
+    socketanalyzer.cpp
 
 RESOURCES += qml.qrc
 
@@ -49,4 +50,5 @@ HEADERS += \
     mysqlhandler.h \
     doctor.h \
     AssessRecord.h \
-    serialhandler.h
+    serialhandler.h \
+    socketanalyzer.h

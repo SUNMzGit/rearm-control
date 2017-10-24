@@ -2,10 +2,12 @@
 #include <QtDebug>
 #include <QDataStream>
 #include <AssessRecord.h>
+#include "socketanalyzer.h"
 
 SerialHandler::Settings currentsetting;//定义设定值结构体的结构体变量
 QSerialPort serialport;
 AssessRecord assessrecord;
+socketAnalyzer socketanalyzer;
 SerialHandler::SerialHandler(QObject *parent) : QObject(parent)
 {
 
@@ -54,8 +56,14 @@ void SerialHandler::sendto(int flag)//此函数由qml里的send按钮触发
         data[5] = uchar(0x01);
         data[6] = uchar(0x3A);
         break;
-    case 2:
-
+    case 2://训练模式
+        data[0] = uchar(0x3A);
+        data[1] = uchar(0x03);
+        data[2] = uchar(0x12);
+        data[3] = uchar(0x00);
+        data[4] = uchar(0x00);
+        data[5] = uchar(0x02);
+        data[6] = uchar(0x3A);
         break;
     case 3:
 
@@ -73,10 +81,9 @@ void SerialHandler::sendto(int flag)//此函数由qml里的send按钮触发
     serialport.write(data);
 }
 ////////////////////接收数据//////////////////////////////
-void SerialHandler::receivefrom()//由readyRead()消息出发（在前边进行绑定），当串口收到数据此消息被激活（对于串口，每发送出去一个字节，都会将此字节返回，触发readyread消息，当芯片有特殊指令时，收到的信息更多，比如对sim900，发送0000，芯片就会受到0000，但是发送AT，会受到 AT OK）
+void SerialHandler::receivefrom()//由readyRead()消息出发（在前边进行绑定），当串口收到数据此消息被激活）
 {
     receiveArray=  serialport.readAll();
-    qDebug() << "==========receivefrom=========";
     analysis(receiveArray,receiveArray.size());
 }
 
@@ -90,8 +97,19 @@ void SerialHandler::analysis(QByteArray request,int reqLen){
     if (reqLen < 4) {
         qDebug()<< "Serial Wrong Data";
     }
-    assessrecord.setElbowPFPS(request[3]);
-    qDebug()<< assessrecord.elbowSF;
+    if (request.at(1) == 0x03 ) { //读指令，需要解析数据
+        if(request.at(2) == 0x07 ){ //读评估数据
+            assessrecord.setElbowPFPS((int)request[3]);
+            assessrecord.setElbowSFSS((int)request[3]);
+            qDebug()<< assessrecord.elbowSF;  //数据测试
+            qDebug()<< assessrecord.elbowSS;
+        }
+        if(request.at(2) == 0x12 ){//读训练数据
+           //----------------------
+           qDebug()<< "request.at(3)";
+           socketanalyzer.SetXYZ(0,100,80,0,0,0,0,0,0);
+        }
+    }
 }
 
 ////////////////////关闭端口//////////////////////////////
