@@ -99,7 +99,7 @@ Item {
                    }
                    MouseArea {
                        anchors.fill: parent
-                       onClicked: { pageSwitched("RehabPage"); }
+                       onClicked: { pageSwitched("PassTrain");}//pageSwitched("RehabPage")
                    }
                 }
 

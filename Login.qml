@@ -113,7 +113,6 @@ Item {
                 onClicked: {
                     pageSwitched("PatInfo");
                     //console.log("pageswitch")
-
                 }
             } //Button
         }

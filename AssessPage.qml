@@ -198,7 +198,7 @@ Item {
                     maximumValue: 100
                     alwaysShowValueLabel: true
                     knobLabel: value
-                    darkBackground: index == 1
+                    //darkBackground: index == 1
                     color: colorRect[3]
                 }
                 Label {
@@ -225,7 +225,7 @@ Item {
                     maximumValue: 100
                     alwaysShowValueLabel: true
                     knobLabel: value
-                    darkBackground: index == 1
+                    //darkBackground: index == 1
                     color: colorRect[5]
                 }
 
@@ -280,7 +280,7 @@ Item {
                 Repeater {
                     model: 6
                     RadioButton {
-                        checked: flase
+                        checked: false
                         text: levelModel[index]
                         exclusiveGroup: optionGroup
                         color: colorRect[index]
@@ -393,7 +393,7 @@ Item {
                 Repeater {
                     model: 6
                     RadioButton {
-                        checked: flase
+                        checked: false
                         text: scoreModel[index]
                         exclusiveGroup: optioncConGroup
                         color: colorRect[index]
