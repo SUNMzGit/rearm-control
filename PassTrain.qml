@@ -18,7 +18,7 @@ Item {
                 height: dp(90)
                 color: "#006699"
                 Label{
-                    text: "画圆"
+                    text: "水平运动"
                     font.pixelSize: 38
                     anchors.centerIn: parent
                     color: "white"
@@ -26,8 +26,10 @@ Item {
             }
             Image {
                 id: name
-                source: "images/hand.png"
-                anchors.centerIn: parent
+                source: "images/x.png"
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 20
             }
         }
         Rectangle {
@@ -38,7 +40,7 @@ Item {
                 height: dp(90)
                 color: "#006699"
                 Label{
-                    text: "水平运动"
+                    text: "垂直运动"
                     font.pixelSize: 38
                     anchors.centerIn: parent
                     color: "white"
@@ -46,8 +48,32 @@ Item {
 
             }
             Image {
-                source: "images/hand.png"
-                anchors.centerIn: parent
+                source: "images/y.png"
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 20
+            }
+        }
+        Rectangle {
+            width: dp(300)
+            height: dp(390)
+            Rectangle{
+                width: parent.width
+                height: dp(90)
+                color: "#006699"
+                Label{
+                    text: "画圆"
+                    font.pixelSize: 38
+                    anchors.centerIn: parent
+                    color: "white"
+                }
+
+            }
+            Image {
+                source: "images/circle.png"
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 20
             }
         }
         Rectangle {
@@ -63,31 +89,14 @@ Item {
                     anchors.centerIn: parent
                     color: "white"
                 }
+            }
+            Image {
+                source: "images/water.png"
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 20
+            }
 
-            }
-            Image {
-                source: "images/hand.png"
-                anchors.centerIn: parent
-            }
-        }
-        Rectangle {
-            width: dp(300)
-            height: dp(390)
-            Rectangle{
-                width: parent.width
-                height: dp(90)
-                color: "#006699"
-                Label{
-                    text: "矢状面运动"
-                    font.pixelSize: 38
-                    anchors.centerIn: parent
-                    color: "white"
-                }
-            }
-            Image {
-                source: "images/hand.png"
-                anchors.centerIn: parent
-            }
         }
     }
 }

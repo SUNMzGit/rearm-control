@@ -5,10 +5,7 @@ import Material 0.3
 
 //后期优化需要把复用率高的Label text写成 labelTextBase.qml @SUNMz_2017/6/6
 Item {
-
     property alias model: patinfoListView.model
-
-
     Rectangle {
         width: dp(1600)
         height: dp(667)

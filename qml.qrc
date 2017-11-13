@@ -24,5 +24,9 @@
         <file>ReportPage.qml</file>
         <file>LabelLabelBase.qml</file>
         <file>images/shape.bmp</file>
+        <file>images/circle.png</file>
+        <file>images/water.png</file>
+        <file>images/x.png</file>
+        <file>images/y.png</file>
     </qresource>
 </RCC>

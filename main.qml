@@ -11,7 +11,7 @@ ApplicationWindow {
     title: qsTr("ArmTrianer")
     flags: Qt.FramelessWindowHint
 
-    property string selectedComponent: "PassTrain"//"Login"//"RehabPage"//"AssessPage"//"PatInfo"//
+    property string selectedComponent: "RehabPage"//"AssessPage"//"PatInfo"//"PassTrain"//"Login"//
 
     initialPage: Page {
         id: page
@@ -42,9 +42,7 @@ ApplicationWindow {
                 // selectedComponent will always be valid, as it defaults to the first component
                 source: {
                         return Qt.resolvedUrl("%.qml").arg(selectedComponent.replace(" ", ""))
-
                 }
-
             }
             // self define!!
             Connections {
@@ -55,6 +53,5 @@ ApplicationWindow {
                 }
             }
         }
-
     }
 }
