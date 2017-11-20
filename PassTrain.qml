@@ -5,6 +5,7 @@ import Material 0.3
 
 Item {
     width: dp(1920)
+    signal pageSwitched( var name );
     RowLayout {
         anchors.centerIn: parent
         spacing: 20
@@ -99,4 +100,17 @@ Item {
 
         }
     }
+    Button {
+        id: gameBtn
+        text: "游戏训练"
+        elevation: 1
+        width: dp(200)
+        backgroundColor:  "#235063"
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 50
+        anchors.horizontalCenter: parent.horizontalCenter
+        onClicked: {
+            pageSwitched("RehabPage");
+        }
+    } //Button
 }

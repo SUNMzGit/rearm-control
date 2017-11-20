@@ -8,7 +8,7 @@ import QtQuick.Dialogs 1.2
 import Material 0.3
 import Material.ListItems 0.1 as ListItem
 Item {
-    property var trainModel: ["被动训练", "主动训练", "助力训练"]
+    property var trainModel: ["主动训练", "助力训练"]
     property var colorRect: ["#009966", "#FFCC00", "#CC3366"]
     property var targetModel : ["ROM训练", "认知训练", "ADL训练"]
     property var primaryColor: "#235063"
@@ -72,7 +72,7 @@ Item {
                     }
                     Column {
                         Repeater {
-                            model: 3
+                            model: 2
                             RadioButton {
                                 checked: flase
                                 text: trainModel[index]
@@ -354,53 +354,6 @@ Item {
                                 anchors.left: parent.left
                                 anchors.leftMargin: dp(20)
                                 anchors.top: type2.bottom
-                                anchors.topMargin: dp(20)
-                            }
-                            Rectangle {
-                                width: 300
-                                height: dp(1)
-                                color: "gray"
-                            }
-
-                            Row {
-                                spacing: dp(150)
-                                anchors.horizontalCenter: parent.horizontalCenter
-                                Label {
-                                    text: "10分钟"
-                                    style: "title"
-                                }
-                                Icon {
-                                    name: "awesome/odnoklassniki"
-                                    size: dp(46)
-                                }
-                            }
-                        }
-                    }
-
-                    Card {
-                        width: dp(300)
-                        height: dp(180)
-                        ColumnLayout {
-                            spacing: dp(20)
-                            Rectangle {
-                                id: type3
-                                width: 300
-                                height: dp(46)
-                                color: colorRect[2]
-                                Label {
-                                    text: "被动"
-                                    font.pixelSize: dp(26)
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    anchors.left: parent.left
-                                    anchors.leftMargin: dp(20)
-                                }
-                            }
-                            Label {
-                                text: "画X轴直线"
-                                font.pixelSize: dp(26)
-                                anchors.left: parent.left
-                                anchors.leftMargin: dp(20)
-                                anchors.top: type3.bottom
                                 anchors.topMargin: dp(20)
                             }
                             Rectangle {

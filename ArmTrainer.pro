@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     doctor.cpp \
     AssessRecord.cpp \
     serialhandler.cpp \
-    socketanalyzer.cpp
+    socketanalyzer.cpp \
+    Md5.cpp
 
 RESOURCES += qml.qrc
 
@@ -51,4 +52,5 @@ HEADERS += \
     doctor.h \
     AssessRecord.h \
     serialhandler.h \
-    socketanalyzer.h
+    socketanalyzer.h \
+    Md5.h
