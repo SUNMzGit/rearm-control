@@ -20,6 +20,13 @@ public:
     QByteArray GetResponse(){
         return response;
     }
+    QByteArray GetResponseSet(){
+        return responseSet;
+    }
+    QByteArray GetResponseXYZ(){
+        return responseXYZ;
+    }
+
     void SetGameSettings(int minutes, int second, int minLevel, int maxLevel, int music);
     int GetTag();
 
@@ -34,7 +41,7 @@ public:
     private:
 
 
-        QByteArray response;
+        QByteArray response,responseXYZ,responseSet;
         int score;
         volatile int tag;
         int type, minutes, second, minLevel, maxLevel, music;

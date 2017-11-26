@@ -54,8 +54,8 @@ void socketAnalyzer:: DataAnalyze(QByteArray request,int reqLen ){
         tag = 1;
         break;
     case 0x03:
+        tag = 3;
         ResponseGameSettings(minutes, second, minLevel, maxLevel, music);
-        tag = 1;
         break;
     case 0x05:
         if (requestPackage.len > 1)
@@ -123,34 +123,34 @@ void socketAnalyzer::SetGameSettings(int minutes, int second, int minLevel, int 
 
 //响应游戏设置，将游戏设置数据和数据长度组包，以便发送
 void socketAnalyzer::ResponseGameSettings(int minutes, int second, int minLevel, int maxLevel, int music) {
-    response[0] = uchar(0x3f);
-    response[1] = uchar(0x06);
-    response[2] = uchar(0x04);
-    response[3] = uchar(minutes);
-    response[4] = uchar(second);
-    response[5] = uchar(minLevel);
-    response[6] = uchar(maxLevel);
-    response[7] = uchar(music);
-    response[8] = uchar(0x3f);
+    responseSet[0] = uchar(0x3f);
+    responseSet[1] = uchar(0x06);
+    responseSet[2] = uchar(0x04);
+    responseSet[3] = uchar(minutes);
+    responseSet[4] = uchar(second);
+    responseSet[5] = uchar(minLevel);
+    responseSet[6] = uchar(maxLevel);
+    responseSet[7] = uchar(music);
+    responseSet[8] = uchar(0x3f);
 }
 
 
 //响应各关节角度信息，将数据组包
 void socketAnalyzer::ResponseXYZ(int type, float xMin, float xMax, float xCur, float yMin, float yMax, float yCur, float zMin, float zMax, float zCur) {
-    response[0] = uchar(0x3f);
-    response[1] = uchar(0x14);
-    response[2] = uchar(0x06);
-    response[3] = uchar(type);
-    response[5] = uchar(xMin);
-    response[7] = uchar(xMax);
-    response[9] = uchar(xCur);
-    response[11] = uchar(yMin);
-    response[13] = uchar(yMax);
-    response[15] = uchar(yCur);
-    response[17] = uchar(zMin);
-    response[19] = uchar(zMax);
-    response[21] = uchar(zCur);
-    response[22] = uchar(0x3f);
+    responseXYZ[0] = uchar(0x3f);
+    responseXYZ[1] = uchar(0x14);
+    responseXYZ[2] = uchar(0x06);
+    responseXYZ[3] = uchar(type);
+    responseXYZ[5] = uchar(xMin);
+    responseXYZ[7] = uchar(xMax);
+    responseXYZ[9] = uchar(xCur);
+    responseXYZ[11] = uchar(yMin);
+    responseXYZ[13] = uchar(yMax);
+    responseXYZ[15] = uchar(yCur);
+    responseXYZ[17] = uchar(zMin);
+    responseXYZ[19] = uchar(zMax);
+    responseXYZ[21] = uchar(zCur);
+    responseXYZ[22] = uchar(0x3f);
 }
 
 
