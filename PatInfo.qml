@@ -145,17 +145,18 @@ Item {
     }
     AddPatDialog {
         id: addpat
-        onAccepted: { //docid未得到
+        onAccepted: {
             var docid = mysqlHandler.getDidFromName(addpat.doctorName)
             console.info(docid)
-//            var strSql = insertUrl(name,age,gender,tip,uplen,forelen,arch,pheight,weight,docid);
-//            mysqlHandler.insertPat(strSql);
-//            updateModel();
+            var strSql = insertUrl(name,age,gender,tip,uplen,forelen,arch,pheight,weight,docid);
+            mysqlHandler.insertPat(strSql);
+            updateModel();
         }
     }
     ListModel {
         id: patientsModel
     }
+
 
 
     Component.onCompleted: {
@@ -167,10 +168,10 @@ Item {
 
     //组织插入语句//insert into table(col2, col3) values('1', '2')
     function insertUrl(name, age, gender, tip, uplen, forelen, arch, height, weight,docid) {
-        var querypart = "insert into patient(name,age,gender,illness,upperArmLength,foreArmLength,affectedSide,height,weight,d_id) ";
-        querypart += "values( ";
-        querypart += String(name+","+age+","+gender+","+tip+","+uplen+","+forelen+","+arch+","+height+","+weight+","+docid);
-        querypart += ")"
+        var request = "INSERT INTO patient(name,age,gender,illness,upperArmLength,foreArmLength,affectedSide,height,weight,d_id) ";
+        request += "VALUES (";
+        request += String(name+","+age+","+gender+","+tip+","+uplen+","+forelen+","+arch+","+height+","+weight+","+docid);
+        request += ")"
         return request;
     }
 
@@ -195,10 +196,10 @@ Item {
     }
     function updateDocModel(){
 
-        //mysqlHandler.connect()
         mysqlHandler.updateDoc();
         for(var i=0; i<mysqlHandler.getDoctorModel.length; i++) {
             docModel[i]  = mysqlHandler.getDoctorModel[i].name;
+            console.info( docModel[i]);
         }
     }
 }

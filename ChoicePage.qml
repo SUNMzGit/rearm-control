@@ -75,7 +75,7 @@ Item {
                    }
                    MouseArea {
                        anchors.fill: parent
-                       onClicked: { serialHandler.openPort();pageSwitched("AssessPage");}
+                       onClicked: { pageSwitched("AssessPage");}
                    }
                 }
 
@@ -99,7 +99,10 @@ Item {
                    }
                    MouseArea {
                        anchors.fill: parent
-                       onClicked: { pageSwitched("PassTrain");}//pageSwitched("RehabPage")
+                       onClicked: {
+                           pageSwitched("PassTrain");
+                           serialHandler.openPort();
+                       }//pageSwitched("RehabPage")
                    }
                 }
 

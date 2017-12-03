@@ -2,11 +2,11 @@
 import QtQuick.Controls 1.5
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.2
-import QtQuick.Layouts 1.2
 import QtQuick.Dialogs 1.2
 
 import Material 0.3
-import Material.ListItems 0.1 as ListItem
+import com.sockethandler 1.0
+
 Item {
     property var trainModel: ["主动训练", "助力训练"]
     property var colorRect: ["#009966", "#FFCC00", "#CC3366"]
@@ -74,7 +74,7 @@ Item {
                         Repeater {
                             model: 2
                             RadioButton {
-                                checked: flase
+                                //checked: flase
                                 text: trainModel[index]
                                 exclusiveGroup: optionGroup1
                                 color: colorRect[index]
@@ -383,7 +383,11 @@ Item {
                     anchors.bottom: parent.bottom
                     anchors.bottomMargin: dp(10)
                     backgroundColor: primaryColor
-                    onClicked: {serialHandler.openPort(); serialHandler.sendto(2);}//pageSwitched("PassTrain");
+                    onClicked: {
+                        serialHandler.openPort();
+                        serialHandler.sendto(2);
+                        socketHandler.game();
+                    }//pageSwitched("PassTrain");
                 }
             }
         }

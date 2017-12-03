@@ -1,7 +1,11 @@
 ﻿#ifndef SOCKETANALYZER_H
 #define SOCKETANALYZER_H
 #include <QString>
+#include <QtDebug>
 
+static float xCur=0;
+static float yCur=0;
+static float zCur=0;
 class GamePackage {
 
 public:
@@ -23,34 +27,31 @@ public:
     QByteArray GetResponseSet(){
         return responseSet;
     }
-    QByteArray GetResponseXYZ(){
-        return responseXYZ;
-    }
+    QByteArray GetResponseXYZ();
 
     void SetGameSettings(int minutes, int second, int minLevel, int maxLevel, int music);
     int GetTag();
 
 
     void SetXYZ(float xMin, float xMax, float xCur, float yMin, float yMax, float yCur, float zMin, float zMax, float zCur);
+    void ResponseXYZ(int type, float xMin, float xMax, float xCur, float yMin, float yMax, float yCur, float zMin, float zMax, float zCur);
+
+protected:
+    void ResponseGameSettings(int minutes, int second, int minLevel, int maxLevel, int music);
+
+private:
 
 
-    protected:
-        void ResponseGameSettings(int minutes, int second, int minLevel, int maxLevel, int music);
-        void ResponseXYZ(int type, float xMin, float xMax, float xCur, float yMin, float yMax, float yCur, float zMin, float zMax, float zCur);
 
-    private:
+    int score;
+    volatile int tag;
+    int type, minutes, second, minLevel, maxLevel, music;
 
-
-        QByteArray response,responseXYZ,responseSet;
-        int score;
-        volatile int tag;
-        int type, minutes, second, minLevel, maxLevel, music;
-
-        void SetIntData(char* data, int value);
-        void SetFloatData(char* data, float value);
-
-        float xMin, xMax, xCur, yMin, yMax, yCur, zMin, zMax, zCur;
-        float YMin, YMax, YCurrent;
+    void SetIntData(char* data, int value);
+    void SetFloatData(char* data, float value);
+public:
+    float xMin, xMax, yMin, yMax, zMin, zMax;
+     QByteArray response,responseSet,responseValue;
 };
 
 #endif // SOCKETANALYZER_H

@@ -16,6 +16,8 @@ class Mysqlhandler : public QObject
         Q_INVOKABLE uchar connect();
         Q_INVOKABLE void deletePat( QString pname);
         Q_INVOKABLE int getDidFromName(QString docName);
+        Q_INVOKABLE int getPidFromName(QString patName);
+
         Q_INVOKABLE int updatePat(); //更新患者列表
         Q_INVOKABLE int updateDoc(); //更新医生列表
         Q_INVOKABLE void insertPat( QString strSql);

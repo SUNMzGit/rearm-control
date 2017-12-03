@@ -16,6 +16,7 @@ Item {
     property var levelModel: ["0 级", "1 级", "2 级 ","3 级","4 级","5 级"]
     property var standardText: ["无可测知的肌肉收缩 ", "有轻微收缩，但不能引起关节运动", "在减重状态下能作关节全范围运动 ","能杭重力作关节全范围运动，但不能抗阻力","能抗重力、抗一定阻力运动","能抗重力、抗充分阻力运动"]
     property var nameText: ["零（Zero，０）", "微缩（Trace，Ｔ）", "差（Poor，P） ","可（Fair，F）","良好（Good，G）","正常（Norlna1，N）"]
+
     Column {   //整体布局
         id: column
         height: parent.height
@@ -89,6 +90,15 @@ Item {
                  tabsAlignment: Qt.AlignHCenter
               }
           }
+    }
+    Connections {
+        target: tabView;
+        onCurrentIndexChanged: {
+            console.log(tabView.currentIndex+" is clicked!");
+            if(tabView.currentIndex==2){
+                serialHandler.openPort();
+            }
+        }
     }
     Component {
         id: tabContent_rom

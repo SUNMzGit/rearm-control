@@ -1,5 +1,6 @@
 ﻿#ifndef SERIALHANDLER_H
 #define SERIALHANDLER_H
+#include "socketanalyzer.h"
 
 #include <QObject>
 #include <QtSerialPort/QSerialPort>
@@ -19,9 +20,7 @@ public:
         QSerialPort::FlowControl flowControl;
     };
 
-
-//    QString receivedata(void);
-//    void setreceivedata(QString receivedata);
+    socketAnalyzer socketanalyzer;
 
     void analysis(QByteArray request,int reqLen);
 
@@ -38,6 +37,8 @@ public slots:
 
 private:
     QByteArray receiveArray;
+
+
 
 };
 

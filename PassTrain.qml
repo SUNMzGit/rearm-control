@@ -32,6 +32,12 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 20
             }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    serialHandler.sendto(10);
+                }
+            }
         }
         Rectangle {
             width: dp(300)
@@ -46,13 +52,18 @@ Item {
                     anchors.centerIn: parent
                     color: "white"
                 }
-
             }
             Image {
                 source: "images/y.png"
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 20
+            }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    serialHandler.sendto(11);
+                }
             }
         }
         Rectangle {
@@ -76,6 +87,12 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 20
             }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    serialHandler.sendto(12);
+                }
+            }
         }
         Rectangle {
             width: dp(300)
@@ -97,7 +114,12 @@ Item {
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 20
             }
-
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    serialHandler.sendto(13);
+                }
+            }
         }
     }
     Button {

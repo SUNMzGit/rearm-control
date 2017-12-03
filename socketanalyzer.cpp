@@ -1,6 +1,5 @@
 ﻿#include "socketanalyzer.h"
-#include <QtDebug>
-#include <QString>
+
 //判断收到的数据包协议格式
 bool GamePackage::SetOriginalData(QByteArray data, int len) {
 
@@ -27,8 +26,8 @@ socketAnalyzer::socketAnalyzer()
 {
     score = 0;
     type = minutes = second = minLevel = maxLevel = music = 0x00;
-    xMin= xMax= xCur= yMin= yMax= yCur= zMin= zMax= zCur = 0.0f;
-    tag = 1;//1发一次 2一直发
+    xMin= xMax= xCur= yMin= yMax= yCur= zMin= zMax= zCur = 0x00;
+    tag = 1;//1、3发一次 2一直发
 
 }
 
@@ -99,17 +98,17 @@ int socketAnalyzer::GetTag() {
 
 
 //设置各关节角度信息数据包
-void socketAnalyzer::SetXYZ(float xMin, float xMax, float xCur, float yMin, float yMax, float yCur, float zMin, float zMax, float zCur) {
-
-    this->xMin = xMin;
-    this->xMax = xMax;
-    this->xCur = xCur;
-    this->yMin = yMin;
-    this->yMax = yMax;
-    this->yCur = yCur;
-    this->zMin = zMin;
-    this->zMax = zMax;
-    this->zCur = zCur;
+void socketAnalyzer::SetXYZ(float xMin1, float xMax1, float xCur1, float yMin1, float yMax1, float yCur1, float zMin1, float zMax1, float zCur1) {
+    qDebug()<<"进入SetXYZ函数";
+    this->xMin = xMin1;
+    this->xMax = xMax1;
+    xCur = xCur1;
+    this->yMin = yMin1;
+    this->yMax = yMax1;
+    yCur = yCur1;
+    this->zMin = zMin1;
+    this->zMax = zMax1;
+    zCur = zCur1;
 }
 
 //设置游戏时间、音效、难度等级
@@ -134,23 +133,32 @@ void socketAnalyzer::ResponseGameSettings(int minutes, int second, int minLevel,
     responseSet[8] = uchar(0x3f);
 }
 
-
 //响应各关节角度信息，将数据组包
 void socketAnalyzer::ResponseXYZ(int type, float xMin, float xMax, float xCur, float yMin, float yMax, float yCur, float zMin, float zMax, float zCur) {
-    responseXYZ[0] = uchar(0x3f);
-    responseXYZ[1] = uchar(0x14);
-    responseXYZ[2] = uchar(0x06);
-    responseXYZ[3] = uchar(type);
-    responseXYZ[5] = uchar(xMin);
-    responseXYZ[7] = uchar(xMax);
-    responseXYZ[9] = uchar(xCur);
-    responseXYZ[11] = uchar(yMin);
-    responseXYZ[13] = uchar(yMax);
-    responseXYZ[15] = uchar(yCur);
-    responseXYZ[17] = uchar(zMin);
-    responseXYZ[19] = uchar(zMax);
-    responseXYZ[21] = uchar(zCur);
-    responseXYZ[22] = uchar(0x3f);
+
+    responseValue[0] = uchar(0x3f);
+    responseValue[1] = uchar(0x14);
+    responseValue[2] = uchar(0x06);
+    responseValue[3] = uchar(type);
+    responseValue[4] = uchar(0x00);
+    responseValue[5] = uchar(xMin);//(this->xMin);
+    responseValue[6] = uchar(0x00);
+    responseValue[7] = uchar(xMax);//(this->xMax);
+    responseValue[8] = uchar(0x00);
+    responseValue[9] = uchar(xCur);
+    responseValue[10] = uchar(0x00);
+    responseValue[11] = uchar(yMin);//(this->yMin);
+    responseValue[12] = uchar(0x00);
+    responseValue[13] = uchar(yMax);//(this->yMax);
+    responseValue[14] = uchar(0x00);
+    responseValue[15] = uchar(yCur);
+    responseValue[16] = uchar(0x00);
+    responseValue[17] = uchar(zMin);//(this->zMin);
+    responseValue[18] = uchar(0x00);
+    responseValue[19] = uchar(zMax);//(this->zMax);
+    responseValue[20] = uchar(0x00);
+    responseValue[21] = uchar(zCur);//(this->zCur);
+    responseValue[22] = uchar(0x3f);
 }
 
 
@@ -163,4 +171,9 @@ void socketAnalyzer::SetIntData(char* data, int value) {
 //数据*100处理
 void socketAnalyzer::SetFloatData(char* data, float value) {
     SetIntData(data, value);
+}
+QByteArray socketAnalyzer::GetResponseXYZ() {
+    qDebug()<<"GetResponseXYZ- this->xCur"<< xCur;
+    ResponseXYZ(type, xMin, xMax, xCur, yMin, yMax, yCur, zMin, zMax, zCur);
+    return responseValue;
 }

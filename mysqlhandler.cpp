@@ -62,7 +62,9 @@ int Mysqlhandler::updatePat(){
 //向patient表中插入数据insert into table(col2, col3) values('1', '2');
 void Mysqlhandler::insertPat( QString strSql){
     QSqlQuery query;
+    qDebug() <<strSql;
     query.exec(strSql);
+    qDebug() <<"向patient表中插入数据";
 }
 
 //查找doctor表中所有数据
@@ -89,4 +91,16 @@ int Mysqlhandler::getDidFromName(QString docName)  {
         return 0;
     }
 }
-
+//根据姓名获取患者id
+int Mysqlhandler::getPidFromName(QString patName)  {
+    QSqlQuery query;
+    QString strSql = QString("SELECT did FROM patient where name = '%1'").arg(patName);
+    query.exec(strSql);
+    if(query.next())
+    {
+        int pid = query.value(0).toInt();
+        return pid;
+    }else {
+        return 0;
+    }
+}

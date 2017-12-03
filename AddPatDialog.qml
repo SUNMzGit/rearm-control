@@ -4,6 +4,7 @@ import QtQuick.Controls 2.1
 import QtQuick.Controls.Styles 1.2
 import QtQuick.Controls.Material 2.1
 import Material 0.2
+import com.mysqlhandler 1.0
 
 Dialog{
 
@@ -99,7 +100,7 @@ Dialog{
         }
         ComboBox {
             id: doctor
-            model: docModel
+            model: ["章程","郭恒","周茂"]
         }
         Text {
             text: qsTr("注意事项")
@@ -110,7 +111,8 @@ Dialog{
         }
     }
     Component.onCompleted: {
-        console.info(docModel)
+        //console.info(docModel[0])
     }
+
 }
 
