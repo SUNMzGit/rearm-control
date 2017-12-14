@@ -28,5 +28,7 @@
         <file>images/water.png</file>
         <file>images/x.png</file>
         <file>images/y.png</file>
+        <file>Circle.qml</file>
+        <file>CircleDialog.qml</file>
     </qresource>
 </RCC>

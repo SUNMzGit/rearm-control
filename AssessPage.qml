@@ -11,6 +11,8 @@ Item {
     signal pageSwitched( var name );
     property var count : 1
     property var tempScore : 0
+    property var conScore : 0
+    property var musLevel : 0
     property var scoreModel : ["0 分", "1 分", "2 分 ","3 分","4 分","5 分"]
     property var colorRect: ["#339900", "#006699", "#FF6600", "#FFFF33", "#FF0000", "#006699"]
     property var levelModel: ["0 级", "1 级", "2 级 ","3 级","4 级","5 级"]
@@ -294,6 +296,7 @@ Item {
                         text: levelModel[index]
                         exclusiveGroup: optionGroup
                         color: colorRect[index]
+                        onClicked: musLevel= index;
                     }
                 }
             } //radioBtn Column
@@ -418,6 +421,7 @@ Item {
                     iconName: "awesome/angle_left"
                     size: dp(56)
                     onClicked: {
+                        conScore -= tempScore;
                         if(count ==1){
                             tipmess.text = "这是第一题哦"
                             tipmess.open();
@@ -489,6 +493,7 @@ Item {
                     iconName: "awesome/angle_right"
                     size: dp(56)
                     onClicked: {
+                        conScore += tempScore;
                         if(count ==1){
                             count++;
                             context.text = "这是什么城市（名）\n\n这是什么区(城区名)\n\n这是什么医院(医院名或胡同名)?\n\n这是第几层楼\n\n这是什么地方(地址、门牌号)"
@@ -545,7 +550,9 @@ Item {
                             return;
                         }
                         if(count ==12){
-                            tipmess.text = "已经是最后一题了"
+                            console.info("conScore");
+                            console.info(conScore);
+                            tipmess.text = "本次MMSE得分"+conScore+"分";
                             tipmess.open();
                             return;
                         }

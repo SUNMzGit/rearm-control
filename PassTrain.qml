@@ -91,8 +91,18 @@ Item {
                 anchors.fill: parent
                 onClicked: {
                     serialHandler.sendto(12);
+                    circleTrain.open();
+
                 }
             }
+        }
+        CircleDialog {
+            id: circleTrain
+            //title: "被动训练"
+//            onAccepted: {
+//                 serialHandler.sendto(4);
+//            }
+
         }
         Rectangle {
             width: dp(300)

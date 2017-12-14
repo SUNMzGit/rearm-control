@@ -20,7 +20,7 @@ class Mysqlhandler : public QObject
 
         Q_INVOKABLE int updatePat(); //更新患者列表
         Q_INVOKABLE int updateDoc(); //更新医生列表
-        Q_INVOKABLE void insertPat( QString strSql);
+        Q_INVOKABLE void insertPat(QString name,int age,QString gender,QString tip,int uplen,int forelen,QString arch,int pheight,int weight,int docid);
 
         QList<QObject*> getPatientModel(){ return this->patientList; };
         QList<QObject*> getDoctorModel(){ return this->doctorList; };

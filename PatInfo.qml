@@ -148,8 +148,8 @@ Item {
         onAccepted: {
             var docid = mysqlHandler.getDidFromName(addpat.doctorName)
             console.info(docid)
-            var strSql = insertUrl(name,age,gender,tip,uplen,forelen,arch,pheight,weight,docid);
-            mysqlHandler.insertPat(strSql);
+            //var strSql = insertUrl(name,age,gender,tip,uplen,forelen,arch,pheight,weight,docid);
+            mysqlHandler.insertPat(name,age,gender,tip,uplen,forelen,arch,pheight,weight,docid);
             updateModel();
         }
     }

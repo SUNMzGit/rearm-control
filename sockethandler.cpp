@@ -48,10 +48,7 @@ void SocketHandler::startRead()
 
         timer->start(1000);
         socket->waitForBytesWritten(20);
-//        while (1) {
-//            socket->write(sockanalyzer->GetResponseXYZ());
-//            Sleep(500);
-//        }
+
     }
 }
 
@@ -65,13 +62,31 @@ void SocketHandler::timeoutslot(){
 
 void SocketHandler::game(){
 
-//    QString program;
-//    program = "D:\\FruitLeftRight718\\fruitLeftRight_dialog_disable.exe";
-//    QStringList arguments;
-//    arguments << "-style" << "fusion";
-//    QProcess *myProcess = new QProcess();
-//    myProcess->startDetached(program, arguments);
+
+
+    QString program;
+//    switch(i){//选择游戏1
+//    case 1:
+//        program = "D:\\RehabGame\\NumberArithmetic\\numberArithmetic.exe";
+//        break;
+//    case 2://选择游戏2
+//        program = "D:\\RehabGame\\FruitLeftRight718\\fruitLeftRight_dialog_disable.exe";
+//        break;
+//    case 3:
+//        program = "D:\\RehabGame\\";
+//        break;
+//    case 4://选择游戏2
+//        program = "D:\\RehabGame\\";
+//        break;
+//    default:
+//        break;
+//    }
+
+    QStringList arguments;
+    arguments << "-style" << "fusion";
+    QProcess *myProcess = new QProcess();
+    myProcess->startDetached(program, arguments);
     sockanalyzer->SetGameSettings(3, 0, 3, 5, 0);
-    sockanalyzer->SetXYZ(0,1,2,3,4,5,6,7,8);
+    //sockanalyzer->SetXYZ(0,1,2,3,4,5,6,7,8);
 
 }

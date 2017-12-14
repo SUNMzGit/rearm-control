@@ -60,9 +60,9 @@ int Mysqlhandler::updatePat(){
 }
 
 //向patient表中插入数据insert into table(col2, col3) values('1', '2');
-void Mysqlhandler::insertPat( QString strSql){
+void Mysqlhandler::insertPat(QString name,int age,QString gender,QString tip,int uplen,int forelen,QString arch,int pheight,int weight,int docid){
     QSqlQuery query;
-    qDebug() <<strSql;
+    QString strSql = QString("INSERT into patient(name,age,gender,illness,upperArmLength,foreArmLength,affectedSide,height,weight,d_id) VALUES('%1','%2','%3','%4','%5','%6','%7','%8','%9','%10')").arg(name).arg(age).arg(gender).arg(tip).arg(uplen).arg(forelen).arg(arch).arg(pheight).arg(weight).arg(docid);
     query.exec(strSql);
     qDebug() <<"向patient表中插入数据";
 }
