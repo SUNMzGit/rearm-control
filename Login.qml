@@ -111,7 +111,7 @@ Item {
                 anchors.topMargin: dp(56)
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
-                    pageSwitched("PatInfo");
+                    pageSwitched("ChoicePage");
                     //console.log("pageswitch")
                 }
             } //Button

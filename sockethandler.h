@@ -15,7 +15,7 @@ class SocketHandler : public QObject
 public:
     explicit SocketHandler(QObject *parent = nullptr);
 
-    Q_INVOKABLE void game();
+    Q_INVOKABLE void game(int i);
 
 signals:
 

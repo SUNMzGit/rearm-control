@@ -134,7 +134,7 @@ Item {
     }
     Button {
         id: gameBtn
-        text: "游戏训练"
+        text: "返回上一页"
         elevation: 1
         width: dp(200)
         backgroundColor:  "#235063"
@@ -142,7 +142,7 @@ Item {
         anchors.bottomMargin: 50
         anchors.horizontalCenter: parent.horizontalCenter
         onClicked: {
-            pageSwitched("RehabPage");
+            pageSwitched("TrainChoice");
         }
     } //Button
 }

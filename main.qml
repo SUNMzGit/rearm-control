@@ -11,7 +11,7 @@ ApplicationWindow {
     title: qsTr("ArmTrianer")
     flags: Qt.FramelessWindowHint
 
-    property string selectedComponent: "PatInfo"//"AssessPage"//"PassTrain"//"RehabPage"//"Login"//
+    property string selectedComponent: "RehabPage"//"Login"//"TrainChoice"//"AssessPage"//"PatInfo"//"PassTrain"//
 
     initialPage: Page {
         id: page
@@ -23,7 +23,7 @@ ApplicationWindow {
             customContent: SystemToolsBar {
                 id: stateBar
                 anchors { left: parent.left;  }
-                homeBtn.onClicked: selectedComponent = "PatInfo";
+                homeBtn.onClicked: selectedComponent = "ChoicePage";
                 setBtn.onClicked: selectedComponent = "SystemSeting";
             }
         }

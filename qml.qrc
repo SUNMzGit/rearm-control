@@ -30,5 +30,15 @@
         <file>images/y.png</file>
         <file>Circle.qml</file>
         <file>CircleDialog.qml</file>
+        <file>images/SH1.png</file>
+        <file>images/ac.png</file>
+        <file>images/bird.png</file>
+        <file>images/chuju.png</file>
+        <file>images/EL1.png</file>
+        <file>images/fly.png</file>
+        <file>images/SH2.png</file>
+        <file>images/user.png</file>
+        <file>TrainChoice.qml</file>
+        <file>images/timg.jpg</file>
     </qresource>
 </RCC>

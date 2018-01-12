@@ -10,6 +10,7 @@ import Material.ListItems 0.1 as ListItem
 Item {
     signal pageSwitched( var name );
     property var count : 1
+    property var countROM : 1
     property var tempScore : 0
     property var conScore : 0
     property var musLevel : 0
@@ -143,7 +144,7 @@ Item {
                         id: romPic
                         width: dp(320)
                         height: dp(320)
-                        source: "images/FM13.png"
+                        source: "images/SH1.png"
 
                     }
                 }
@@ -237,7 +238,6 @@ Item {
                     maximumValue: 100
                     alwaysShowValueLabel: true
                     knobLabel: value
-                    //darkBackground: index == 1
                     color: colorRect[5]
                 }
 
@@ -248,7 +248,28 @@ Item {
                 IconButton {
                     iconName: "awesome/angle_left"
                     size: dp(56)
-
+                    onClicked: {
+                        if(countROM==1)
+                        {
+                            tipmess.text = "这是第一个测试哦"
+                            tipmess.open();
+                            return;
+                        }
+                        if(countROM==2)
+                        {
+                            countROM--;
+                            romPic.source="images/SH1.png";
+                            romText.text = "肘关节屈曲/伸展"
+                            return;
+                        }
+                        if(countROM==3)
+                        {
+                            countROM--;
+                            romPic.source ="images/SH2.png";
+                            romText.text = "肩关节内收/外展"
+                            return;
+                        }
+                    }
                 }
             }
             Rectangle {
@@ -258,7 +279,27 @@ Item {
                 IconButton {
                     iconName: "awesome/angle_right"
                     size: dp(56)
-
+                    onClicked: {
+                        if(countROM==1)
+                        {
+                            countROM++;
+                            romPic.source ="images/SH2.png";
+                            romText.text = "肩关节内收/外展"
+                            return;
+                        }
+                        if(countROM==2)
+                        {
+                            countROM++;
+                            romPic.source="images/EL1.png";
+                            romText.text = "肘关节屈曲/伸展"
+                            return;
+                        }
+                        if(countROM==3)
+                        {
+                            tipmess.text = "这是最后测试哦"
+                            tipmess.open();
+                        }
+                    }
                 }
             }
         }

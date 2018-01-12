@@ -271,67 +271,123 @@ Item {
             anchors.centerIn: parent
             color: "#FFFFFF"
 
-            Column{
-                id: col_title3
-                spacing: dp(26)
-                anchors {
-                    top: parent.top
-                    left: parent.left
-                    leftMargin: dp(360)
-                    topMargin: dp(70)
-                }
+            GridLayout {
+                columns: 2
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: parent.top
+                anchors.topMargin: 100
+
+                Layout.rowSpan: 50
                 Label {
                     text: "串口号"
-                    font.pixelSize: dp(20)
-                }
-                Label {
-                    text: "波特率"
-                    font.pixelSize: dp(20)
-                }
-                Label {
-                    text: "校验位"
-                    font.pixelSize: dp(20)
-                }
-                Label {
-                    text: "数据位"
-                    font.pixelSize: dp(20)
-                }
-                Label {
-                    text: "停止位"
-                    font.pixelSize: dp(20)
-                }
-
-            }
-            Column {
-                id: col_content3
-                //spacing: dp(8)
-                anchors {
-                    top: parent.top
-                    left: col_title3.right
-                    leftMargin: dp(50)
-                    topMargin: dp(55)
-                }
-                MenuField {
+                    font.pixelSize: dp(26)
+                }  MenuField {
                     width: 200
                     model: [ "COM1", "COM2", "COM3"]
                 }
+
+                Label {
+                    text: "波特率"
+                    font.pixelSize: dp(26)
+                }
                 MenuField {
                     width: 200
-                    model: [ "9600", "115200", "COM3"]
+                    model: [ "115200", "9600", "COM3"]
+                }
+
+                Label {
+                    text: "校验位"
+                    font.pixelSize: dp(26)
                 }
                 MenuField {
                     width: 200
                     model: [ "无校验", "奇校验", "偶校验"]
                 }
+
+                Label {
+                    text: "数据位"
+                    font.pixelSize: dp(26)
+                }
                 MenuField {
                     width: 200
                     model: [ "8位", "16位", "8位"]
+                }
+
+                Label {
+                    text: "停止位"
+                    font.pixelSize: dp(26)
                 }
                 MenuField {
                     width: 200
                     model: [ "1位", "1.5位", "2位"]
                 }
+
+
+
             }
+
+//            Column{
+//                id: col_title3
+//                spacing: dp(26)
+//                anchors {
+//                    top: parent.top
+//                    left: parent.left
+//                    leftMargin: dp(360)
+//                    topMargin: dp(70)
+//                }
+
+//                Label {
+//                    text: "串口号"
+//                    font.pixelSize: dp(20)
+//                }
+//                Label {
+//                    text: "波特率"
+//                    font.pixelSize: dp(20)
+//                }
+//                Label {
+//                    text: "校验位"
+//                    font.pixelSize: dp(20)
+//                }
+//                Label {
+//                    text: "数据位"
+//                    font.pixelSize: dp(20)
+//                }
+//                Label {
+//                    text: "停止位"
+//                    font.pixelSize: dp(20)
+//                }
+
+//            }
+//            Column {
+//                id: col_content3
+//                //spacing: dp(8)
+//                anchors {
+//                    top: parent.top
+//                    left: col_title3.right
+//                    leftMargin: dp(50)
+//                    topMargin: dp(55)
+//                }
+//                MenuField {
+//                    width: 200
+//                    model: [ "COM1", "COM2", "COM3"]
+//                }
+//                MenuField {
+//                    width: 200
+//                    model: [ "9600", "115200", "COM3"]
+//                }
+//                MenuField {
+//                    width: 200
+//                    model: [ "无校验", "奇校验", "偶校验"]
+//                }
+//                MenuField {
+//                    width: 200
+//                    model: [ "8位", "16位", "8位"]
+//                }
+//                MenuField {
+//                    width: 200
+//                    model: [ "1位", "1.5位", "2位"]
+//                }
+//            }
 
 
             Button {

@@ -3,14 +3,10 @@ import QtQuick.Controls 1.5
 import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.2
 import Material 0.3
-import Material.ListItems 0.1 as ListItem
-import Material.Extras 0.1
 
 Item {
     width: dp(1920)
-    property var trainModel: ["被动训练", "主动训练", "助力训练"]
-    property var colorRect: ["#339900", "#006699", "#FF6600"]
-    property var targetModel : ["ROM训练", "认知训练", "ADL训练"]
+
     signal pageSwitched( var name );
 
     Column {
@@ -38,7 +34,7 @@ Item {
                 }
             }
             Label {
-                text: "功能选择"
+                text: "康复训练"
                 style: "headline"
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
@@ -51,31 +47,32 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             height: dp(360)
             color: "#5ba0c0"
+
             Row {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: dp(100)
                 Rectangle {
-                   width: dp(312)
-                   height: dp(186)
-                   color: "#2b7da3"
+                    width: dp(312)
+                    height: dp(186)
+                    color: "#2b7da3"
                    Row  {
                        anchors.verticalCenter: parent.verticalCenter
                        anchors.horizontalCenter: parent.horizontalCenter
                        Label {
-                           text: "患者管理"
+                           text: "被动训练"
                            style: "display1"
                            color: "white"
                            anchors.verticalCenter: parent.verticalCenter
                        }
                        Image {
                            id: userImage
-                           source: "images/user.png"
+                           source: "images/train.png"
                        }
                    }
                    MouseArea {
                        anchors.fill: parent
-                       onClicked: { pageSwitched("PatInfo");}
+                       onClicked: { pageSwitched("PassTrain");serialHandler.openPort();}
                    }
                 }
                 Rectangle {
@@ -86,71 +83,19 @@ Item {
                        anchors.verticalCenter: parent.verticalCenter
                        anchors.horizontalCenter: parent.horizontalCenter
                        Label {
-                           text: "康复评估"
+                           text: "主动训练"
                            style: "display1"
                            color: "white"
                            anchors.verticalCenter: parent.verticalCenter
                        }
                        Image {
                            id: assessImage
-                           source: "images/assess.png"
-                       }
-                   }
-                   MouseArea {
-                       anchors.fill: parent
-                       onClicked: { pageSwitched("AssessPage");}
-                   }
-                }
-
-                Rectangle {
-                   width: dp(312)
-                   height: dp(186)
-                   color: "#2b7da3"
-                   Row  {
-                       anchors.verticalCenter: parent.verticalCenter
-                       anchors.horizontalCenter: parent.horizontalCenter
-                       Label {
-                           text: "康复训练"
-                           style: "display1"
-                           color: "white"
-                           anchors.verticalCenter: parent.verticalCenter
-                       }
-                       Image {
-                           id: trainImage
                            source: "images/train.png"
                        }
                    }
                    MouseArea {
                        anchors.fill: parent
-                       onClicked: {
-                           pageSwitched("TrainChoice");
-
-                       }
-                   }
-                }
-
-                Rectangle {
-                   width: dp(312)
-                   height: dp(186)
-                   color: "#2b7da3"
-                   Row  {
-                       anchors.verticalCenter: parent.verticalCenter
-                       anchors.horizontalCenter: parent.horizontalCenter
-                       Label {
-                           text: "康复报告"
-                           style: "display1"
-                           color: "white"
-                           anchors.verticalCenter: parent.verticalCenter
-                       }
-
-                       Image {
-                           id: reportImage
-                           source: "images/report.png"
-                       }
-                   }
-                   MouseArea {
-                       anchors.fill: parent
-                       onClicked: { pageSwitched("ReportPage");  }
+                       onClicked: { pageSwitched("RehabPage");}
                    }
                 }
             }

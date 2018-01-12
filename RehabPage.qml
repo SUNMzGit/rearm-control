@@ -182,6 +182,7 @@ Item {
                     width: dp(100)
                     height: dp(52)
                     backgroundColor: primaryColor
+                    enabled: false
                 }
             }
             Rectangle {
@@ -200,7 +201,7 @@ Item {
                     spacing: dp(1)
 
                     delegate: infoComponent
-                    model: 6//trainDatabase
+                    model: trainDatabase//4//
                     Component {
                         id: infoComponent
 
@@ -222,7 +223,7 @@ Item {
                                 Image {
                                     id: name
                                     anchors.verticalCenter: parent.verticalCenter
-                                    source: "images/assess.png"
+                                    source: pictor
 
                                 }
                                 Label {
@@ -231,7 +232,7 @@ Item {
                                     horizontalAlignment: Text.AlignLeft
                                     verticalAlignment: Text.AlignVCenter
                                     style: "title"
-                                    text: "画直线"//patsModel[index].name
+                                    text: gname
                                 }
                                 Label {
                                     Layout.alignment: Qt.AlignLeft
@@ -239,7 +240,7 @@ Item {
                                     horizontalAlignment: Text.AlignLeft
                                     verticalAlignment: Text.AlignVCenter
                                     style: "title"
-                                    text: "训练意义和训练方法介绍训练意义和训练方法介绍训练意义和训练方法"//patsModel[index].acheArm
+                                    text: introduction
                                 }
                             }
                             MouseArea {
@@ -251,11 +252,32 @@ Item {
                                 }
                             }
                         }//wrapper
+
                     } //infoComponent
                 } //ListView
             }
             ListModel {
                 id: trainDatabase
+                ListElement {
+                    pictor: "images/ac.png"
+                    gname: "数字计算"
+                    introduction: "挑战者需要算出界面的题目答案，然后移动手臂选择相应结果"
+                }
+                ListElement {
+                    pictor: "images/bird.png"
+                    gname: "小鸟吃金币"
+                    introduction: "挑战者需要移动手臂避开炸弹，同时移动手臂使小鸟接触红心"
+                }
+                ListElement {
+                    pictor: "images/chuju.png"
+                    gname: "厨具记忆"
+                    introduction: "挑战者需记住屏幕上出现的厨具，在其消逝后选择缺少的厨具"
+                }
+                ListElement {
+                    pictor: "images/fly.png"
+                    gname: "放飞气球"
+                    introduction: "挑战者在走到气球处的时候，上抬手臂释气球，得分"
+                }
             }
 
             Rectangle {
@@ -281,8 +303,10 @@ Item {
                         height: dp(30)
                     }
                     Label {
-                        text: " 治疗计划"
+                        text: " 治疗计划--待定"
                         style: "title"
+                    }
+                    TimePicker {
                     }
                     Card {
                         width: dp(300)
@@ -303,7 +327,7 @@ Item {
                                 }
                             }
                             Label {
-                                text: "章鱼大作战"
+                                text: trainDatabaseListView.currentIndex==0?"数字计算":trainDatabaseListView.currentIndex==1?"小鸟吃金币":trainDatabaseListView.currentIndex==2?"厨具记忆":trainDatabaseListView.currentIndex==3?"放飞气球":"zz"
                                 font.pixelSize: dp(26)
                                 anchors.left: parent.left
                                 anchors.leftMargin: dp(20)
@@ -320,7 +344,7 @@ Item {
                                 spacing: dp(150)
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 Label {
-                                    text: "10分钟"
+                                    text: "5分钟"
                                     style: "title"
                                 }
                                 Icon {
@@ -330,52 +354,7 @@ Item {
                             }
                         }
                     }
-                    Card {
-                        width: dp(300)
-                        height: dp(180)
-                        ColumnLayout {
-                            spacing: dp(20)
-                            Rectangle {
-                                id: type2
-                                width: 300
-                                height: dp(46)
-                                color: colorRect[1]
-                                Label {
-                                    text: "助力"
-                                    font.pixelSize: dp(26)
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    anchors.left: parent.left
-                                    anchors.leftMargin: dp(20)
-                                }
-                            }
-                            Label {
-                                text: "章鱼大作战"
-                                font.pixelSize: dp(26)
-                                anchors.left: parent.left
-                                anchors.leftMargin: dp(20)
-                                anchors.top: type2.bottom
-                                anchors.topMargin: dp(20)
-                            }
-                            Rectangle {
-                                width: 300
-                                height: dp(1)
-                                color: "gray"
-                            }
 
-                            Row {
-                                spacing: dp(150)
-                                anchors.horizontalCenter: parent.horizontalCenter
-                                Label {
-                                    text: "10分钟"
-                                    style: "title"
-                                }
-                                Icon {
-                                    name: "awesome/odnoklassniki"
-                                    size: dp(46)
-                                }
-                            }
-                        }
-                    }
                 }
                 Button {
                     text: "开始训练"
@@ -386,7 +365,7 @@ Item {
                     onClicked: {
                         serialHandler.openPort();
                         serialHandler.sendto(2);
-                        socketHandler.game();
+                        socketHandler.game(trainDatabaseListView.currentIndex);
                     }//pageSwitched("PassTrain");
                 }
             }

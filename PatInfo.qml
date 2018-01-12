@@ -165,16 +165,6 @@ Item {
         updateDocModel();
     }
 
-
-    //组织插入语句//insert into table(col2, col3) values('1', '2')
-    function insertUrl(name, age, gender, tip, uplen, forelen, arch, height, weight,docid) {
-        var request = "INSERT INTO patient(name,age,gender,illness,upperArmLength,foreArmLength,affectedSide,height,weight,d_id) ";
-        request += "VALUES (";
-        request += String(name+","+age+","+gender+","+tip+","+uplen+","+forelen+","+arch+","+height+","+weight+","+docid);
-        request += ")"
-        return request;
-    }
-
     function updateModel(){
         patientsModel.clear();
         mysqlHandler.updatePat();
