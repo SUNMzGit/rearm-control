@@ -5,7 +5,7 @@
 #include "mysqlhandler.h"
 #include "serialhandler.h"
 #include "sockethandler.h"
-
+#include "reporthandler.h"
 #include <QQuickStyle>
 
 int main(int argc, char *argv[])
@@ -14,14 +14,19 @@ int main(int argc, char *argv[])
 
     QQuickStyle::setStyle("Material");
 
+    qmlRegisterType<Mysqlhandler>("com.reporthandler", 1, 0, "Reporthandler");
+
     qmlRegisterType<Mysqlhandler>("com.mysqlhandler", 1, 0, "Mysqlhandler");
     qmlRegisterType<SerialHandler>("com.serialhandler", 1, 0, "SerialHandler");
     qmlRegisterType<SocketHandler>("com.sockethandler", 1, 0, "SocketHandler");
     QQmlApplicationEngine engine;
 
+    Reporthandler reporthandler;
+
     Mysqlhandler mysqlHandler;
     SerialHandler serialHandler;
     SocketHandler socketHandler;
+    engine.rootContext()->setContextProperty("reporthandler", &reporthandler);
     engine.rootContext()->setContextProperty("mysqlHandler", &mysqlHandler);
     engine.rootContext()->setContextProperty("serialHandler", &serialHandler);
     engine.rootContext()->setContextProperty("socketHandler", &socketHandler);

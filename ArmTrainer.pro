@@ -16,7 +16,8 @@ SOURCES += main.cpp \
     serialhandler.cpp \
     socketanalyzer.cpp \
     Md5.cpp \
-    sockethandler.cpp
+    sockethandler.cpp \
+    reporthandler.cpp
 
 RESOURCES += qml.qrc
 
@@ -55,4 +56,5 @@ HEADERS += \
     serialhandler.h \
     socketanalyzer.h \
     Md5.h \
-    sockethandler.h
+    sockethandler.h \
+    reporthandler.h

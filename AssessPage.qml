@@ -7,6 +7,8 @@ import QtQuick.Dialogs 1.2
 import Material 0.3
 import Material.ListItems 0.1 as ListItem
 
+import com.reporthandler 1.0
+
 Item {
     signal pageSwitched( var name );
     property var count : 1
@@ -158,7 +160,7 @@ Item {
                 width: dp(500)
                 rows: 6
                 columns: 2
-                rowSpacing: dp(10)
+                rowSpacing: dp(5)
 
                 Label {
                     text: "肩关节屈曲"
@@ -172,6 +174,7 @@ Item {
                     alwaysShowValueLabel: true
                     knobLabel: value
                     color: colorRect[0]
+                    value: reporthandler.getShoulderSF
                 }
 
                 Label {
@@ -186,6 +189,7 @@ Item {
                     alwaysShowValueLabel: true
                     knobLabel: value
                     color: colorRect[1]
+                    value: reporthandler.getShoulderSS
                 }
                 Label {
                     text: "肩关节外展"
@@ -199,6 +203,7 @@ Item {
                     alwaysShowValueLabel: true
                     knobLabel: value
                     color: colorRect[2]
+                    value: reporthandler.getShoulderPF
                 }
                 Label {
                     text: "肩关节内收"
@@ -211,8 +216,8 @@ Item {
                     maximumValue: 100
                     alwaysShowValueLabel: true
                     knobLabel: value
-                    //darkBackground: index == 1
                     color: colorRect[3]
+                    value: reporthandler.getShoulderPS
                 }
                 Label {
                     text: "肘关节屈曲"
@@ -226,6 +231,7 @@ Item {
                     alwaysShowValueLabel: true
                     knobLabel: value
                     color: colorRect[4]
+                    value: reporthandler.getElbowSF
                 }
                 Label {
                     text: "肘关节伸展"
@@ -239,6 +245,7 @@ Item {
                     alwaysShowValueLabel: true
                     knobLabel: value
                     color: colorRect[5]
+                    value: reporthandler.getElbowSS
                 }
 
             }

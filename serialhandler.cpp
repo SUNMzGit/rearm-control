@@ -12,8 +12,8 @@ SerialHandler::SerialHandler(QObject *parent) : QObject(parent)
 {
 
     QObject::connect(&serialport, SIGNAL(readyRead()),this, SLOT(receivefrom()));//将端口收到数据产生的信号绑定receivefrom()函数;
-    currentsetting.name = "COM1";
-    currentsetting.baudRate=115200;
+    currentsetting.name = "COM4";
+    currentsetting.baudRate=9600;
     currentsetting.dataBits=QSerialPort::Data8;
     currentsetting.parity=QSerialPort::NoParity;
     currentsetting.stopBits=QSerialPort::OneStop;
@@ -68,9 +68,8 @@ void SerialHandler::analysis(QByteArray request,int reqLen){
             qDebug()<< assessrecord.elbowSS;
         }
         if(request.at(2) == 0x12 ){//读训练数据
-           qDebug()<< (float)request[3]<<(float)request[4];
-           socketanalyzer.SetXYZ(0,180,(float)request[3],0,150,(float)request[4],0,0,0);
-
+            qDebug()<< (float)request[3]<<(float)request[4];  //这里验证读取x轴和y轴数据
+            socketanalyzer.SetXYZ(0,65,(float)request[3],30,150,(float)request[4],0,0,0);
         }
     }
 }

@@ -99,7 +99,7 @@ int socketAnalyzer::GetTag() {
 
 //设置各关节角度信息数据包
 void socketAnalyzer::SetXYZ(float xMin1, float xMax1, float xCur1, float yMin1, float yMax1, float yCur1, float zMin1, float zMax1, float zCur1) {
-    qDebug()<<"进入SetXYZ函数";
+    qDebug()<<"进入SetXYZ函数"<<xCur1<<yCur1;
     this->xMin = xMin1;
     this->xMax = xMax1;
     xCur = xCur1;
@@ -141,15 +141,15 @@ void socketAnalyzer::ResponseXYZ(int type, float xMin, float xMax, float xCur, f
     responseValue[2] = uchar(0x06);
     responseValue[3] = uchar(type);
     responseValue[4] = uchar(0x00);
-    responseValue[5] = uchar(xMin);//(this->xMin);
+    responseValue[5] = uchar(0x00);//(this->xMin);
     responseValue[6] = uchar(0x00);
-    responseValue[7] = uchar(xMax);//(this->xMax);
+    responseValue[7] = uchar(0x41);//(this->xMax);
     responseValue[8] = uchar(0x00);
     responseValue[9] = uchar(xCur);
     responseValue[10] = uchar(0x00);
-    responseValue[11] = uchar(yMin);//(this->yMin);
+    responseValue[11] = uchar(0x10);//(this->yMin);
     responseValue[12] = uchar(0x00);
-    responseValue[13] = uchar(yMax);//(this->yMax);
+    responseValue[13] = uchar(0x96);//(this->yMax);
     responseValue[14] = uchar(0x00);
     responseValue[15] = uchar(yCur);
     responseValue[16] = uchar(0x00);

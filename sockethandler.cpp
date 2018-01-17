@@ -46,7 +46,7 @@ void SocketHandler::startRead()
         socket->waitForBytesWritten(20);
     }else if(sockanalyzer->GetTag() == 2){
 
-        timer->start(1000);
+        timer->start(50);
         socket->waitForBytesWritten(20);
 
     }
@@ -70,13 +70,13 @@ void SocketHandler::game(int i){
         program = "D:\\RehabGame\\NumberArithmetic\\numberArithmetic.exe";
         break;
     case 1://选择游戏2
-        program = "D:\\RehabGame\\FruitLeftRight718\\fruitLeftRight_dialog_disable.exe";
+        program = "D:\\RehabGame\\BirdAllDirection\\birdAllDiection201611261901.exe";
         break;
     case 2://选择游戏3
-        program = "D:\\RehabGame\\";
+        program = "D:\\RehabGame\\Memory\\Memory.exe";
         break;
     case 3://选择游戏4
-        program = "D:\\RehabGame\\";
+        program = "D:\\RehabGame\\"; //虚拟现实游戏待添加
         break;
     default:
         break;
